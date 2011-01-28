@@ -1,6 +1,38 @@
-<html>
-
-{% block content %}
-{% endblock %}
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen, projection">
+    {% block css %}{% endblock %}
+    {% block js %}{% endblock %}
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1><a href="/">status.twilio</a></h1>
+      </header>
+      <div id="message"></div>
+      <div class="content" id="{%block content_id%}{%endblock%}">
+        {% block content %}
+        {% endblock %}
+        <div id="push"></div>
+      </div>
+    </div>
+    <footer>
+      <nav>
+      <ul class="left">
+	<li><a href="/report-an-issue">Report an Issue</a></li>
+	<li><a href="/documentation/overview">API Documentation</a></li>
+        <li>Copyright &copy {% now "Y" %} <a href="http://www.twilio.com">Twilio Inc.</a></li>
+      </ul>
+      <ul class="right">
+	<li id="powered">
+          <a href="http://www.stashboard.org">POWERED BY <img src="{{ STATIC_URL }}images/poweredbystash.png" alt="stash!" /> STASHBOARD</a>
+        </li>
+       </ul>
+    </footer>
+    {% block js_end %}
+    {% endblock %}
+  </body>
 </html>

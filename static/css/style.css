@@ -1,0 +1,177 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+        font-family: "Helvetica Neue", Arial, sans-sarif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Sticky Footer */
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -1.3em;
+}
+
+footer, #push {
+    height: 1.3em;
+    clear: both;
+}
+
+/* Main Site */
+
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; }
+
+wrapper, footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    width: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: grey;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+#wrapper {
+    width: 750px;
+}
+
+ul.service_list li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 230px;
+    min-height: 40px;
+    background: grey;
+    margin: 0 20px 20px 0;
+}
+
+ul.service_list li:nth-child(3n) {
+    margin: 0 0 20px 0;
+}
+
+ul.service_list li img{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    margin-top: -20px;
+}
+
+ul.service_list li a{
+    font-size: 1.2em;
+    display: block;
+    margin-left: 50px;
+    padding: 10px 0;
+    
+}
+
+#breadcrumb {
+    margin-bottom: 20px;
+}
+
+#breadcrumb ul li {
+    display: inline-block;
+}
+
+#breadcrumb ul li:after {
+    content: " >";
+}
+
+#breadcrumb ul li:last-child:after {
+    content: "";
+}
+
+#service_detail h1 {
+    font-size: 2.4em;
+}
+
+#service_detail h1, #service_detail .status {
+    margin: 10px;
+    float: left;
+}
+
+#service_detail h2 {
+    clear: both;
+}
+
+#issues {
+    clear: both;
+}
+
+#issues tr th {
+    text-align: left;
+}
+
+#issues td, #issues th {
+    padding: 10px 10px 0 0;
+}
+
+#issue_detail table tr td:first-child {
+    width: 100px;
+    text-aligh: left;
+}
+
+footer { width: 750px; font-size: .8em;}
+footer nav ul.left{ float: left }
+footer nav ul.right{ float: right }
+footer nav ul li { display: inline-block; }
+footer nav ul li:after { content: " |"; }
+footer nav ul li:last-child:after { content: ""; }
+

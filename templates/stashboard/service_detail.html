@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content_id %}service_detail{% endblock %}
+{% block content %}
+
+<nav id="breadcrumb">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/regions/{{ service.region.slug }}">{{ service.region }}</a></li>
+    <li>{{ service.name }}</li>
+  </ul>
+</nav>
+
+<img class="status" src="{{ STATIC_URL }}images/status/{{ service.status.image }}" alt="Status Image" />
+<h1>{{ service.name }}</h1>
+
+{% if announcements %}
+<h2>Annoucements</h2>
+<ul>
+{% for a in announcements %}
+  <li>
+    <h3>{{ a.title }}</h3>
+    <time datetime="{{ a.created }}" pubdate>
+      {{ a.created|date:"M-j-Y" }}
+    </time>
+    <p>{{ a.message }}</p>
+  </li>
+</ul>
+{% endfor %}
+{% endif %}
+
+
+{% if issues %}
+  <h2>Open Issues</h2>
+  <table id="issues">
+    <tbody>
+  {% for issue in issues %}
+    <tr>
+      <td>{{ issue.opened|date:"M-j-Y" }}</td>
+      <td><a href="/issues/{{issue.pk}}">{{ issue }}</a></td>
+    </tr>
+  {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Hooray! No open issues!</p>
+{% endif %}
+
+
+{% endblock %}

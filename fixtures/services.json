@@ -1,0 +1,90 @@
+[
+    {
+        "pk": 2, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "Twilio.com account portal", 
+            "name": "Account Portal", 
+            "slug": "account-portal"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "Calls to phone numbers hosted by Twilio", 
+            "name": "Incoming Phone Calls", 
+            "slug": "incoming-phone-calls"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "SMS messages sent to phone numbers hosted by Twilio", 
+            "name": "Incoming SMS", 
+            "slug": "incoming-sms"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "Call from Twilio to other phone numbers", 
+            "name": "Outgoing Phone Calls", 
+            "slug": "outgoing-phone-calls"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "SMS messages sent to mobile phones outside Twilio", 
+            "name": "Outgoing SMS", 
+            "slug": "outgoing-sms"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "Twilio.com website", 
+            "name": "Website", 
+            "slug": "website"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "Twilio REST API", 
+            "name": "REST API", 
+            "slug": "rest-api"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "stashboard.service", 
+        "fields": {
+            "status": 1, 
+            "region": 1, 
+            "description": "Speech-to-text transcription service", 
+            "name": "Speech-to-Text", 
+            "slug": "speech-text"
+        }
+    }
+]

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content_id %}issue_detail{% endblock %}
+{% block content %}
+
+<nav id="breadcrumb">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/regions/{{ issue.service.region.slug }}">{{ issue.service.region }}</a></li>
+    <li><a href="/services/{{ issue.service.slug }}">{{ issue.service }}</a></li>
+    <li>{{ issue }}</li>
+  </ul>
+</nav>
+
+<h1>{{ issue }}</h1>
+
+<table id="issues">
+  <tbody>
+    {% for issue in issues %}
+    <tr>
+      <td>{{ issue.opened|date:"M-j-Y" }}</td>
+      <td><a href="/issues/{{issue.pk}}">{{ issue }}</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>{{ issue.opened|date:"M-j-Y" }}</td>
+      <td>{{ issue.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

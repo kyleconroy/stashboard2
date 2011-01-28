@@ -1,0 +1,52 @@
+[
+    {
+        "model": "stashboard.region",
+        "pk": 1,
+        "fields": {
+            "slug": "us", 
+            "name": "United States",
+            "location": "North America"
+        }
+    },
+    {
+        "model": "stashboard.status",
+        "pk": 1,
+        "fields": {
+            "slug": "up", 
+            "name": "Up",
+            "description": "This service is up and running",
+            "image": "up.png"
+        }
+    },
+    {
+        "model": "stashboard.status",
+        "pk": 2,
+        "fields": {
+            "slug": "down", 
+            "name": "Down",
+            "description": "This service is down",
+            "image": "down.png"
+        }
+    },
+    {
+        "model": "stashboard.status",
+        "pk": 3,
+        "fields": {
+            "slug": "intermittent",
+            "name": "Intermittent",
+            "description": "This service is experiencing intermittent problems",
+            "image": "intermittent.png"
+        }
+    },
+    {
+        "model": "stashboard.status",
+        "pk": 4,
+        "fields": {
+            "slug": "maintenance",
+            "name": "Maintenance",
+            "description": "This service is currently undergoing scheduled maintenance",
+            "image": "maintenance.png"
+        }
+    }
+]
+
