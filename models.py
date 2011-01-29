@@ -92,7 +92,8 @@ class Issue(models.Model):
 
 
 class Update(models.Model):
-    
+    """An issue update
+    """
 
 
 
