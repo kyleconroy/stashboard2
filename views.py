@@ -7,11 +7,6 @@ from stashboard.models import Region
 from stashboard.models import Status
 from stashboard.models import Service
 
-class ServiceListView(ListView):
-
-    context_object_name = "services"
-    model = Service
-
 class RegionDetailView(DetailView):
 
     context_object_name = "region"
@@ -20,7 +15,13 @@ class RegionDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(RegionDetailView, self).get_context_data(**kwargs)
         context['services'] = Service.objects.filter(region=self.object)
+        context['statuses'] = Status.objects.all()
         return context
+
+class DefaultRegionView(RegionDetailView):
+
+    def get_object(self):
+        return Region.objects.all()[0]
 
 class IssueDetailView(DetailView):
 
