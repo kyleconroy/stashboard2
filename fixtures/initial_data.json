@@ -14,7 +14,7 @@
         "fields": {
             "slug": "up", 
             "name": "Up",
-            "description": "This service is up and running",
+            "description": "Up and running",
             "image": "up.png"
         }
     },
@@ -24,7 +24,7 @@
         "fields": {
             "slug": "down", 
             "name": "Down",
-            "description": "This service is down",
+            "description": "Down",
             "image": "down.png"
         }
     },
@@ -34,7 +34,7 @@
         "fields": {
             "slug": "intermittent",
             "name": "Intermittent",
-            "description": "This service is experiencing intermittent problems",
+            "description": "Intermittent problems",
             "image": "intermittent.png"
         }
     },
@@ -44,7 +44,7 @@
         "fields": {
             "slug": "maintenance",
             "name": "Maintenance",
-            "description": "This service is currently undergoing scheduled maintenance",
+            "description": "Scheduled maintenance",
             "image": "maintenance.png"
         }
     }

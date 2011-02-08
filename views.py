@@ -6,6 +6,7 @@ from stashboard.models import Issue
 from stashboard.models import Region
 from stashboard.models import Status
 from stashboard.models import Service
+from stashboard.models import Update
 
 class RegionDetailView(DetailView):
 
@@ -28,19 +29,26 @@ class IssueDetailView(DetailView):
     context_object_name = "issue"
     model = Issue
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(IssueDetailView, self).get_context_data(**kwargs)
+        # Get the object we're querying
+        context['updates'] = Update.objects.filter(issue=self.object)
+        return context
+
 class ServiceDetailView(DetailView):
 
     context_object_name = "service"
     model = Service
 
     def get_object(self):
-        return get_object_or_404(Service, slug__iexact=self.kwargs["slug"])
+        return get_object_or_404(Service, slug=self.kwargs["slug"])
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ServiceDetailView, self).get_context_data(**kwargs)
         # Get the object we're querying
-        context['issues'] = Issue.objects.filter(service=self.object)
+        context['issues'] = Issue.objects.filter(service=self.object).filter(closed=None)
         context['announcements'] = Annoucement.objects.filter(service=self.object)
         return context
 

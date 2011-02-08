@@ -16,14 +16,26 @@
 
 <table id="issues">
   <tbody>
-    {% for issue in issues %}
+    {% if issue.closed %}
     <tr>
-      <td>{{ issue.opened|date:"M-j-Y" }}</td>
-      <td><a href="/issues/{{issue.pk}}">{{ issue }}</a></td>
+      <td>{{ issue.closed|date:"M j, Y" }}</td>
+      <td>
+        <strong>RESOLVED:</strong>
+        {{ issue.resolution}}
+      </td>
+    </tr>
+    {% endif %}
+    {% for update in updates %}
+    <tr>
+      <td>{{ update.created|date:"M j, Y" }}</td>
+      <td>
+        <strong>UPDATE:</strong>
+        {{ update.description}}
+      </td>
     </tr>
     {% endfor %}
     <tr>
-      <td>{{ issue.opened|date:"M-j-Y" }}</td>
+      <td>{{ issue.opened|date:"M j, Y" }}</td>
       <td>{{ issue.description }}</td>
     </tr>
   </tbody>

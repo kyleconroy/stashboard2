@@ -52,6 +52,13 @@ class Service(models.Model):
     def __unicode__(self):
         return unicode(self.name)
 
+    def feeds(self):
+        return ["All Activity", "Annoucements", "Issues"]
+
+    def archives(self):
+        return ["All Activity", "Annoucements", "Issues", "Status Changes"]
+
+
 class Annoucement(models.Model):
     """A service announcement
         Properties:
@@ -78,11 +85,12 @@ class Issue(models.Model):
         closed  -- datetime: The date and time this issue was opened
         service -- Service: The service this annoucement is for
     """
+    service = models.ForeignKey(Service)
     title = models.CharField(max_length=100)
     description = models.TextField()
     opened  = models.DateTimeField(auto_now_add=True)
     closed  = models.DateTimeField(null=True, blank=True)
-    service = models.ForeignKey(Service)
+    resolution  = models.TextField(null=True, blank=True)
 
     def __unicode__(self):
         if self.closed:
@@ -90,10 +98,20 @@ class Issue(models.Model):
         else:
             return unicode("Open: {0}".format(self.title))
 
+    def is_closed(self):
+        if self.closed:
+            return True
+        else:
+            return False
+
 
 class Update(models.Model):
     """An issue update
     """
+    issue = models.ForeignKey(Issue)
+    created  = models.DateTimeField(auto_now_add=True)
+    description = models.TextField()
+    
 
 
 

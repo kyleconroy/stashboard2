@@ -140,18 +140,18 @@ ul.service_list li a{
 
 #service_detail h1 {
     font-size: 2.4em;
+    margin-bottom: 15px;
 }
 
-#service_detail h1, #service_detail .status {
-    margin: 10px;
+#service_detail section.sidebar {
+    float: right;
+}
+
+#service_detail section.main {
     float: left;
 }
 
 #service_detail h2 {
-    clear: both;
-}
-
-#issues {
     clear: both;
 }
 
@@ -168,7 +168,7 @@ ul.service_list li a{
     text-aligh: left;
 }
 
-footer { width: 750px; font-size: .8em;}
+footer { width: 750px; font-size: .8em; clear:both}
 footer nav ul.left{ float: left }
 footer nav ul.right{ float: right }
 footer nav ul li { display: inline-block; }
