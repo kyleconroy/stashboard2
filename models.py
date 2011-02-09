@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.db import models
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class Region(models.Model):
@@ -53,13 +55,23 @@ class Service(models.Model):
         return unicode(self.name)
 
     def feeds(self):
-        return ["All Activity", "Annoucements", "Issues"]
+        fs = []
+        for f in ["All Activity", "Announcements", "Issues"]:
+            url = "{0}feeds/services/{1}/{2}".format(settings.SB_ROOT, 
+                                                     self.slug, slugify(f))
+            fs.append({"title": f,"url": url})
+        return fs
 
     def archives(self):
-        return ["All Activity", "Annoucements", "Issues", "Status Changes"]
+        fs = []
+        for f in ["All Activity", "Announcements", "Issues"]:
+            url = "{0}archives/services/{1}/{2}".format(settings.SB_ROOT, 
+                                                     self.slug, slugify(f))
+            fs.append({"title": f,"url": url})
+        return fs
 
 
-class Annoucement(models.Model):
+class Announcement(models.Model):
     """A service announcement
         Properties:
         message -- string: A Markdown formatted message
@@ -82,7 +94,7 @@ class Issue(models.Model):
         description   -- string: The description of this servier
         title   -- string: The title of the annoucement
         opened  -- datetime: The date and time this issue was opened
-        closed  -- datetime: The date and time this issue was opened
+        closed  -- datetime: The date and time this issue was closed
         service -- Service: The service this annoucement is for
     """
     service = models.ForeignKey(Service)
@@ -107,11 +119,31 @@ class Issue(models.Model):
 
 class Update(models.Model):
     """An issue update
+        Properties:
+        description   -- string: The description of this servier
+        issue -- Issue: The Issue this update is for
+        created  -- datetime: The date and time this update was created
     """
     issue = models.ForeignKey(Issue)
     created  = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
-    
+
+    def __unicode__(self):
+        return unicode("UPDATE on Issue ") + unicode(self.issue)
+
+
+class LogEntry(models.Model):
+    """ An archival entry into the log
+        url -- url: The url to display in the log
+        service -- Service: The service this annoucement is for
+        description -- string: The description of this log entry
+    """
+    created  = models.DateTimeField(auto_now_add=True)
+    service = models.ForeignKey(Service)
+    url = models.CharField(max_length=150)
+    description = models.TextField()
+
+
 
 
 

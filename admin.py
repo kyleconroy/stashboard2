@@ -1,5 +1,5 @@
 from django.contrib import admin
-from stashboard.models import Service, Region, Status, Annoucement, Issue, Update
+from stashboard.models import Service, Region, Status, Announcement, Issue, Update
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ['name', 'description', 'region', 'status']
@@ -12,7 +12,7 @@ class AnnouncementAdmin(admin.ModelAdmin):
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Region)
 admin.site.register(Status)
-admin.site.register(Annoucement, AnnouncementAdmin)
+admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Issue)
 admin.site.register(Update)
 

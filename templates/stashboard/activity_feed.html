@@ -1,0 +1,18 @@
+{% extends "stashboard/feed.html" %}
+
+{% block content %}
+    {% for l in logentry_list %}
+    <entry>
+        <id>tag:{{ host }},2010:{{ a.pk }}</id>
+        <title>{{ l.service.name }} - {{ l.description }}</title>
+        <updated>{{ l.created|date:"Y-m-d\TH:i:s\Z" }}</updated>
+        <content>{{ l.description }}</content>
+        <author>
+            <name>{{ SITE_AUTHOR }}</name>
+        </author>
+        <sb:id>{{ l.pk }}</sb:id>
+        <sb:service>{{ l.service.name }}</sb:service>
+        <sb:timestamp>{{ l.created|date:"Y-m-d\TH:i:s\Z" }}</sb:timestamp>
+    </entry>
+    {% endfor %}
+{% endblock %}

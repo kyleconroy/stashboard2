@@ -23,9 +23,9 @@
 <ul>
   {% for feed in service.feeds %}
   <li>
-    <a href="#">
+    <a href="{{ feed.url }}">
       <img src="{{ STATIC_URL }}images/feed.png" alt="RSS icon"/>
-      {{ feed }}
+      {{ feed.title }}
     </a>
   </li>
   {% endfor %}
@@ -35,7 +35,7 @@
 <ul>
   {% for a in service.archives %}
   <li>
-    <a href="#">{{ a }}</a>
+    <a href="{{ a.url }}">{{ a.title }}</a>
   </li>
   {% endfor %}
 </ul>
@@ -48,13 +48,15 @@
 
   {% if announcements %}
   <h2>Annoucements</h2>
-  <ul>
+  <ul class="announcements">
     {% for a in announcements %}
     <li>
       <h3>{{ a.title }}</h3>
-      <time datetime="{{ a.created }}" pubdate>
-        {{ a.created|date:"M-j-Y" }}
-      </time>
+      <p>
+        <time datetime="{{ a.created }}" pubdate>
+          {{ a.created|date:"M-j-Y" }}
+        </time>
+      </p>
       <p>{{ a.message }}</p>
     </li>
     {% endfor %}
