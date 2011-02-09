@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1, 
+        "model": "stashboard.issue", 
+        "fields": {
+            "description": "A shared database server is offline affecting a small percentage of applications. We are working to recover the database server and will provide updates as we have more information.", 
+            "service": 2, 
+            "title": "Website Down", 
+            "closed": "2011-02-02 16:06:43", 
+            "resolution": "Per the previous update, we are no longer tracking this issue.", 
+            "opened": "2011-02-02 17:59:55"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "stashboard.issue", 
+        "fields": {
+            "description": "We are investigating elevated error rates on the platform.", 
+            "service": 2, 
+            "title": "Elevated Error Rates", 
+            "closed": null, 
+            "resolution": "Performance and error rates are back to normal.", 
+            "opened": "2011-02-09 01:04:40"
+        }
+    }
+]
