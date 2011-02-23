@@ -57,16 +57,14 @@ class Service(models.Model):
     def feeds(self):
         fs = []
         for f in ["All Activity", "Announcements", "Issues"]:
-            url = "%sfeeds/services/%s/%s" % (settings.SB_ROOT, 
-                                              self.slug, slugify(f))
+            url = "/feeds/services/%s/%s" % (self.slug, slugify(f))
             fs.append({"title": f,"url": url})
         return fs
 
     def archives(self):
         fs = []
         for f in ["All Activity", "Announcements", "Issues"]:
-            url = "%sarchives/services/%s/%s" % (settings.SB_ROOT, 
-                                                 self.slug, slugify(f))
+            url = "/archives/services/%s/%s" % (self.slug, slugify(f))
             fs.append({"title": f,"url": url})
         return fs
 
