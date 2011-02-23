@@ -3,48 +3,15 @@
 {% block content_id %}service_detail{% endblock %}
 {% block content %}
 
-<nav id="breadcrumb">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/regions/{{ service.region.slug }}">{{ service.region }}</a></li>
-    <li>{{ service.name }}</li>
-  </ul>
-</nav>
-
-
-<section class="sidebar">
-
-{% with status=service.status %} 
-  <img src="{{ STATIC_URL }}images/status/{{ status.image }}" alt="Status Image" />
-  <strong>{{ status.description|upper }}</strong>
-{% endwith %}
-
-<h3>Feeds</h3>
-<ul>
-  {% for feed in service.feeds %}
-  <li>
-    <a href="{{ feed.url }}">
-      <img src="{{ STATIC_URL }}images/feed.png" alt="RSS icon"/>
-      {{ feed.title }}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
-
-<h3>Archives</h3>
-<ul>
-  {% for a in service.archives %}
-  <li>
-    <a href="{{ a.url }}">{{ a.title }}</a>
-  </li>
-  {% endfor %}
-</ul>
-
-</section>
-
 <section class="main">
 
-  <h1>{{ service.name }}</h1>
+  <header>
+    <h1>{{ service.name }}</h1>
+    {% with status=service.status %} 
+    <img src="{{ STATIC_URL }}images/status/{{ status.image }}" alt="Status Image" />
+    <strong>{{ status.description|upper }}</strong>
+    {% endwith %}
+  </header>
 
   {% if announcements %}
   <h2>Annoucements</h2>
@@ -62,6 +29,31 @@
     {% endfor %}
   </ul>
   {% endif %}
+
+  <section class="sidebar">
+
+    <h3>Feeds</h3>
+    <ul>
+      {% for feed in service.feeds %}
+      <li>
+	<a href="{{ feed.url }}">
+	  <img src="{{ STATIC_URL }}images/feed.png" alt="RSS icon"/>
+	  {{ feed.title }}
+	</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h3>Archives</h3>
+    <ul>
+      {% for a in service.archives %}
+      <li>
+	<a href="{{ a.url }}">{{ a.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </section>
 
   <div class="issues">
     {% if issues %}

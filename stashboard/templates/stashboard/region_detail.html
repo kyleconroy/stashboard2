@@ -9,18 +9,10 @@
     <li>
       <img src="{{ STATIC_URL }}images/status/{{ service.status.image }}" alt="Status Image" />
       <a href="/services/{{service.slug}}">{{ service.name }}</a>
-    </li>
-
-  {% endfor %}
-</ul>
-
-<h2>Legend</h2>
-<ul class="status_list">
-  {% for status in statuses %}
-
-    <li>
-      <img src="{{ STATIC_URL }}images/status/{{ status.image }}" alt="Status Image" />
-      {{ status.description }}
+      <ul>
+	<li><a href="#">1 ANNOUCEMENT</a></li>
+	<li><a href="#">1 ISSUE</a></li>
+      </ul>
     </li>
 
   {% endfor %}

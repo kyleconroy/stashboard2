@@ -77,25 +77,25 @@ wrapper, footer {
     margin-right: auto;
 }
 
-header {
+#wrapper > header {
     width: auto;
     text-align: center;
     margin-bottom: 20px;
-    padding: 20px;
     position: relative;
+    height: 80px;
 }
 
-header h1 {
+#wrapper > header h1 {
     font-size: 2em;
     position: absolute;
-    top: 0px;
+    top: 20px;
     left: 75px;
     padding: 10px;
 }
 
-header img {
+#wrapper > header img {
     position: absolute;
-    top: 0px;
+    top: 20px;
     left: 0px;
     width: 75px;
 }
@@ -103,41 +103,45 @@ header img {
 h2, h3, p { margin-bottom: 10px;}
 
 #wrapper {
-    width: 750px;
+    width: 600px;
 }
 
-ul.service_list li {
+ul.service_list > li {
     position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 230px;
+    display: block;
     min-height: 40px;
     background: grey;
-    margin: 0 20px 20px 0;
-}
-
-ul.service_list li:nth-child(3n) {
     margin: 0 0 20px 0;
 }
 
-ul.service_list li img{
+ul.service_list > li > img{
     position: absolute;
     top: 50%;
     left: 0px;
     margin-top: -20px;
 }
 
-ul.service_list li a{
+ul.service_list > li > a{
     font-size: 1.2em;
-    display: block;
     margin-left: 50px;
-    padding: 10px 0;
-    
 }
+
+ul.service_list > li > ul{
+    position: absolute;
+    top: 5px;
+    left: 350px;
+    font-size: .8em;
+}  
+
+ul.service_list > li > ul > li{
+    float: left;
+    margin-right: 10px;
+}  
+
 
 #report {
     position: absolute;
-    top: 0px;
+    top: 20px;
     right: 0px;
     display: block;
     padding: 15px;
@@ -169,11 +173,6 @@ ul.service_list li a{
     width: 185px;
 }
 
-#service_detail section.main {
-    float: left;
-    width: 525px;
-}
-
 #service_detail h2 {
     clear: both;
 }
@@ -199,7 +198,7 @@ ul.service_list li a{
     text-aligh: left;
 }
 
-footer { width: 750px; font-size: .8em; clear:both}
+footer { width: 600px; font-size: .8em; clear:both}
 footer nav ul.left{ float: left }
 footer nav ul.right{ float: right }
 footer nav ul li { display: inline-block; }
