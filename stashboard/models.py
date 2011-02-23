@@ -57,16 +57,16 @@ class Service(models.Model):
     def feeds(self):
         fs = []
         for f in ["All Activity", "Announcements", "Issues"]:
-            url = "{0}feeds/services/{1}/{2}".format(settings.SB_ROOT, 
-                                                     self.slug, slugify(f))
+            url = "%sfeeds/services/%s/%s" % (settings.SB_ROOT, 
+                                              self.slug, slugify(f))
             fs.append({"title": f,"url": url})
         return fs
 
     def archives(self):
         fs = []
         for f in ["All Activity", "Announcements", "Issues"]:
-            url = "{0}archives/services/{1}/{2}".format(settings.SB_ROOT, 
-                                                     self.slug, slugify(f))
+            url = "%sarchives/services/%s/%s" % (settings.SB_ROOT, 
+                                                 self.slug, slugify(f))
             fs.append({"title": f,"url": url})
         return fs
 
@@ -106,9 +106,9 @@ class Issue(models.Model):
 
     def __unicode__(self):
         if self.closed:
-            return unicode("Resolved: {0}".format(self.title))
+            return unicode("Resolved: %s" % self.title)
         else:
-            return unicode("Open: {0}".format(self.title))
+            return unicode("Open: %s" % self.title)
 
     def is_closed(self):
         if self.closed:
