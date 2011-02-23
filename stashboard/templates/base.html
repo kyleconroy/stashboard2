@@ -10,7 +10,9 @@
   <body>
     <div id="wrapper">
       <header>
-        <h1><a href="/">status.twilio</a></h1>
+	<a id="report" href="/report-an-issue">FILE A TICKET</a>
+	<img src="{{ STATIC_URL }}images/logo.png" alt="Stashboard Logo" />
+        <h1><a href="/">{{ SITE_NAME }}</a></h1>
       </header>
       <div id="message"></div>
       <div class="content" id="{%block content_id%}{%endblock%}">
@@ -22,7 +24,7 @@
     <footer>
       <nav>
       <ul class="left">
-	<li><a href="/report-an-issue">Report an Issue</a></li>
+	<li><a href="/report-an-issue">Login</a></li>
 	<li><a href="/documentation/overview">API Documentation</a></li>
         <li>Copyright &copy {% now "Y" %} <a href="http://www.twilio.com">Twilio Inc.</a></li>
       </ul>

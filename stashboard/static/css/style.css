@@ -82,11 +82,22 @@ header {
     text-align: center;
     margin-bottom: 20px;
     padding: 20px;
-    background: grey;
+    position: relative;
 }
 
 header h1 {
     font-size: 2em;
+    position: absolute;
+    top: 0px;
+    left: 75px;
+    padding: 10px;
+}
+
+header img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 75px;
 }
 
 h2, h3, p { margin-bottom: 10px;}
@@ -123,6 +134,14 @@ ul.service_list li a{
     padding: 10px 0;
     
 }
+
+#report {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: block;
+    padding: 15px;
+}    
 
 #breadcrumb {
     margin-bottom: 20px;
